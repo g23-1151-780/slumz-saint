@@ -1,0 +1,276 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #080808;
+  --dark: #111111;
+  --white: #ffffff;
+  --gray: #aaaaaa;
+  --line: #303030;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  border-bottom: 1px solid var(--line);
+  background: var(--black);
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.header nav {
+  display: flex;
+  gap: 28px;
+}
+
+.header nav a {
+  color: #cccccc;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.header nav a:hover,
+footer a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+/* MAIN HERO */
+.hero {
+  min-height: 600px;
+  padding: 125px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(120deg, #080808, #202020);
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #bdbdbd;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(70px, 12vw, 145px);
+  line-height: 0.86;
+  letter-spacing: -5px;
+  font-weight: 900;
+  margin-bottom: 28px;
+}
+
+.hero h1 span {
+  color: #999999;
+}
+
+.tagline {
+  font-size: 23px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description {
+  max-width: 460px;
+  color: #bbbbbb;
+  margin-bottom: 28px;
+}
+
+.button {
+  display: inline-block;
+  padding: 13px 23px;
+  border: 1px solid var(--white);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* ABOUT */
+.about {
+  padding: 90px 10%;
+  background: var(--white);
+  color: var(--black);
+}
+
+.about .eyebrow {
+  color: #555555;
+}
+
+.about h2,
+.contact h2 {
+  font-size: clamp(38px, 6vw, 66px);
+  line-height: 1.05;
+  margin-bottom: 22px;
+  letter-spacing: -2px;
+}
+
+.about > p:last-child {
+  max-width: 600px;
+  color: #444444;
+}
+
+/* VALUES */
+.collection {
+  padding: 90px 8%;
+}
+
+.collection h2 {
+  font-size: 42px;
+  margin-bottom: 35px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  padding: 30px;
+  border: 1px solid var(--line);
+  min-height: 190px;
+  transition: background 0.2s;
+}
+
+.card:hover {
+  background: #191919;
+}
+
+.card span {
+  color: #999999;
+  font-size: 12px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin: 18px 0 10px;
+}
+
+.card p {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* CONTACT */
+.contact {
+  padding: 90px 10%;
+  background: #171717;
+}
+
+.contact h2 {
+  font-size: clamp(45px, 7vw, 80px);
+}
+
+.contact > p:not(.eyebrow) {
+  color: #bbbbbb;
+  margin-bottom: 25px;
+}
+
+.button-light {
+  background: var(--white);
+  color: var(--black);
+}
+
+.button-light:hover {
+  background: transparent;
+  color: var(--white);
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 8%;
+  border-top: 1px solid var(--line);
+}
+
+footer .logo {
+  font-size: 15px;
+}
+
+footer p,
+footer > a:last-child {
+  color: var(--gray);
+  font-size: 10px;
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px 5%;
+  }
+
+  .header nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero {
+    min-height: 500px;
+    padding: 90px 7%;
+  }
+
+  .hero h1 {
+    letter-spacing: -3px;
+  }
+
+  .tagline {
+    font-size: 19px;
+  }
+
+  .about,
+  .collection,
+  .contact {
+    padding: 65px 7%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 5%;
+  }
+}
